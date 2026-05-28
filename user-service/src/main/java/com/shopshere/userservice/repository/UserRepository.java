@@ -1,10 +1,11 @@
 package com.shopshere.userservice.repository;
 
-import com.shopshere.userservice.entity.users;
+import com.shopshere.userservice.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
 
-public interface UserRepository extends JpaRepository<users, UUID> {
-    users findByEmail(String email);
+@Repository
+public interface UserRepository extends JpaRepository<Users, Integer> {
+    Users findByEmail(String email);
 }

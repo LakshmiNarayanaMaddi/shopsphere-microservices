@@ -2,22 +2,23 @@ package com.shopshere.userservice.entity;
 
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class users {
+@Entity
+public class Users {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private UUID id;
+    private Integer id;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false, unique = true)
